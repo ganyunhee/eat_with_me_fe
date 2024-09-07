@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import { StyleSheet } from 'react-native';
 import { Text, TextInput, Pressable, View, ViewProps, TextProps, TextInputProps, PressableProps } from 'react-native';
+import { Link, LinkProps } from 'expo-router';
 
 type StyledProps<T> = T & {
   className?: string;
@@ -47,6 +48,16 @@ export const StyledContainer: React.FC<StyledProps<ViewProps>> = ({ children, cl
   </View>
 );
 
+export const StyledLink: React.FC<StyledProps<LinkProps<string>>> = ({ children, className = '', ...props }) => (
+  <Link
+    className={`font-bold hover:underline hover:decoration-2 ${className}`}
+    style={styles.link}
+    {...props}
+  >
+    {children}
+  </Link>
+);
+
 const styles = StyleSheet.create({
   input: {
     borderColor: "#DFDBE7",
@@ -54,5 +65,8 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.3,
     shadowRadius: 5,
+  },
+  link: {
+
   }
 })

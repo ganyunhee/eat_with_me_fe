@@ -49,10 +49,7 @@ const createEvent = () => {
 
   return (
     <StyledView className="flex-1 items-center justify-center bg-white pb-4">
-      <StyledText className="mb-1 text-3xl font-bold">Make your Event</StyledText>
-      <StyledText className="mb-4 font-bold">
-        Talk arts & crafts, sports, the latest in AI...
-      </StyledText>
+      <StyledText className="mb-4 text-3xl font-bold">Create an Event</StyledText>
 
       {/* name for your event */}
       <StyledView className="w-full max-w-md">
