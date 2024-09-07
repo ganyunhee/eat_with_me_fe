@@ -40,16 +40,17 @@ const signup = () => {
           body: urlEncodedData.toString(),
         });
   
-        const result = await response.text(); // Use response.json() if expecting JSON
+        const result = await response.json(); // Use response.json() if expecting JSON
   
         if (response.ok) {
+          console.log('Success Response:', response);
           console.log('Signup successful:', result);
           Alert.alert('Success', 'You have signed up successfully!');
           // Navigate or handle successful signup here
         } else {
           console.log('Response:', response);
           console.error('Signup failed:', result);
-          Alert.alert('Error', result || 'Signup failed');
+          Alert.alert('Error', result.message || 'Signup failed');
         }
       } catch (error) {
         console.error('An error occurred:', error);
