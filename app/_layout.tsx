@@ -8,7 +8,6 @@ export default function Layout() {
       <Stack.Screen name="index" />
       <Stack.Screen name="Card" />
       <Stack.Screen name="kakao-map" />
-      <Stack.Screen name="naver-map" />
     </Stack>
   )
 }
