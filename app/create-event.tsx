@@ -83,6 +83,38 @@ const createEvent = () => {
           onChangeValue={handleChangeAttendees}
         />
       </StyledView>
+
+      <StyledView className="w-full max-w-md">
+          <StyledInput
+            placeholder="Event Time"
+            onChangeText={handleChangeName}
+            value={name}
+          />
+      </StyledView>
+
+      <StyledView className="w-full max-w-md">
+          <StyledInput
+            placeholder="Event Location"
+            onChangeText={handleChangeName}
+            value={name}
+          />
+      </StyledView>
+
+      <StyledView className="w-full max-w-md">
+          <StyledInput
+            placeholder="Group Chat Link"
+            onChangeText={handleChangeName}
+            value={name}
+          />
+      </StyledView>
+
+      <StyledView className="w-full max-w-md">
+          <StyledInput
+            placeholder="Description"
+            onChangeText={handleChangeName}
+            value={name}
+          />
+      </StyledView>
     </StyledView>
   );
 };

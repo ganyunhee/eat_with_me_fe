@@ -45,8 +45,18 @@ export default function Layout() {
             headerShown: false
           }}
         />
-        <Stack.Screen name="create-event" />
-        <Stack.Screen name="kakao-map" />
+        <Stack.Screen 
+          name="create-event"
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen 
+          name="kakao-map" 
+          options={{
+            headerShown: false
+          }}
+        />
       </Stack>
     </View>
   );
