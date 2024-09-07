@@ -32,7 +32,7 @@ const signup = () => {
   
       try {
         // Send POST request to the backend
-        const response = await fetch('https://your-backend-url.com/signup', {
+        const response = await fetch('https://qwer-wfvxm.run.goorm.site/register', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
