@@ -1,8 +1,6 @@
 import React from 'react';
 import { WebView } from 'react-native-webview';
 import { View, Platform } from 'react-native';
-//import { StyledView } from '@/components/StyledComponents';
-//import { ViewStyle } from 'react-native';
 
 const html = `
 <!DOCTYPE html>

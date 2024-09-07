@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import React from 'react'
 import Card from "../components/Card"
 
@@ -7,6 +7,7 @@ import dummy_data from "../dummyData.json"
 
 const Home = () => {
   return (
+    <ScrollView>
     <View className={styles.container}>
       <View className={styles.library}>
           {dummy_data.map((data) => {
@@ -23,6 +24,7 @@ const Home = () => {
           })}
         </View>
     </View>
+    </ScrollView>
   )
 }
 
