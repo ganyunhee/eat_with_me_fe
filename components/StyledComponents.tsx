@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import { StyleSheet } from 'react-native';
 import { Text, TextInput, Pressable, View, ViewProps, TextProps, TextInputProps, PressableProps } from 'react-native';
 
 type StyledProps<T> = T & {
@@ -20,17 +21,38 @@ export const StyledText: React.FC<StyledProps<TextProps>> = ({ children, classNa
 
 export const StyledInput: React.FC<StyledProps<TextInputProps>> = ({ className = '', ...props }) => (
   <TextInput
-    className={`h-10 border rounded p-2.5 w-full my-2 mb-2 focus:border-blue-400 ${className}`}
+    className={`h-10 border rounded p-2.5 w-full my-2 mb-2 ${className}`}
+    style={{ borderColor: "#C5C5C5" }}
     {...props}
   />
 );
 
 export const StyledButton: React.FC<StyledProps<PressableProps>> = ({ children, className = '', ...props }) => (
   <Pressable
-    className={`bg-blue-400 py-3 rounded-md active:bg-blue-600 ${className}`}
+    className={`bg-brand py-3 rounded-md active:bg-brand-light ${className}`}
     android_ripple={{ color: 'bg-blue-600', borderless: false }}
     {...props}
   >
     <Text className="text-white text-center font-bold">{children}</Text>
   </Pressable>
 );
+
+export const StyledContainer: React.FC<StyledProps<ViewProps>> = ({ children, className = '', ...props }) => (
+  <View 
+    className={`rounded-md border p-10`} 
+    style={styles.input}
+    {...props}
+  >
+    {children}
+  </View>
+);
+
+const styles = StyleSheet.create({
+  input: {
+    borderColor: "#DFDBE7",
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+  }
+})

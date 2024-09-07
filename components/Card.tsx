@@ -35,5 +35,5 @@ const styles = {
   rating: "font-bold",
   date: "text-gray-500",
   members: "mb-2",
-  joinButton: "rounded-md h-10",
+  joinButton: "rounded-md h-10 p-1",
 }

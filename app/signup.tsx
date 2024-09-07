@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React, { useState } from 'react'
-import { StyledView, StyledText, StyledInput, StyledButton } from '../components/StyledComponents'
+import { StyledView, StyledContainer, StyledText, StyledInput, StyledButton } from '../components/StyledComponents'
 import { Link } from 'expo-router'
 
 const login = () => {
@@ -21,6 +21,7 @@ const login = () => {
 
   return (
     <StyledView className="bg-white flex-1 items-center justify-center pb-4">
+        <StyledContainer>
         <Image className="m-14" source={require('../assets/logo.svg')}></Image>
         <StyledView className="w-full max-w-sm">
             <StyledInput
@@ -64,6 +65,7 @@ const login = () => {
             </Link>
             <StyledText className="self-center m-3">Already have an account? <Link href="/login" className="font-bold">Sign In</Link></StyledText>
         </StyledView>
+        </StyledContainer>
     </StyledView>
   )
 }
