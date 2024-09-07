@@ -26,7 +26,7 @@ export default function Card() {
 }
 
 const styles = {
-  card: "w-[200px] p-2 flex flex-col gap-1",
+  card: "w-[31%] p-2 flex flex-col gap-1 justify-middle align-center m-auto",
   cardTopLine: "flex flex-row justify-between",
   image: "rounded-lg object-contain w-10",
   address: "",
