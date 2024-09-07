@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import { StyledView, StyledContainer, StyledText, StyledInput, StyledButton, StyledLink } from '../components/StyledComponents'
 import { Link } from 'expo-router'
@@ -20,7 +20,7 @@ const login = () => {
   
 
   return (
-    <StyledView className="bg-white flex-1 items-center justify-center pb-4">
+    <ScrollView className="bg-white flex-1 items-center justify-center pb-4">
         <StyledContainer>
         <Image className="m-14" source={require('../assets/logo.svg')}></Image>
         <StyledView className="w-full max-w-sm">
@@ -66,7 +66,7 @@ const login = () => {
             <StyledText className="self-center m-3">Already have an account? <StyledLink href="/login">Sign In</StyledLink></StyledText>
         </StyledView>
         </StyledContainer>
-    </StyledView>
+    </ScrollView>
   )
 }
 
