@@ -35,6 +35,18 @@ export default function Layout() {
           }
         }}
       />
+      <Stack.Screen
+        name="signup"
+        options={{
+          title: "Sign Up",
+          headerStyle: {
+            backgroundColor: "#FFF"
+          },
+          headerTitleStyle: {
+            fontWeight: "bold"
+          }
+        }}
+      />
       <Stack.Screen name="create-event" />
       <Stack.Screen name="kakao-map" />
     </Stack>

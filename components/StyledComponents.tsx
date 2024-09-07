@@ -20,7 +20,7 @@ export const StyledText: React.FC<StyledProps<TextProps>> = ({ children, classNa
 
 export const StyledInput: React.FC<StyledProps<TextInputProps>> = ({ className = '', ...props }) => (
   <TextInput
-    className={`h-10 border rounded p-2.5 w-full focus:border-blue-400 ${className}`}
+    className={`h-10 border rounded p-2.5 w-full my-2 mb-2 focus:border-blue-400 ${className}`}
     {...props}
   />
 );

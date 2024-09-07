@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Image } from 'react-native'
 import React, { useState } from 'react'
 import { StyledView, StyledText, StyledInput, StyledButton } from '../components/StyledComponents'
 import { Link } from 'expo-router'
@@ -14,30 +14,29 @@ const login = () => {
 
   return (
     <StyledView className="bg-white flex-1 items-center justify-center pb-4">
-        <StyledText className="text-3xl font-bold mb-4">Login</StyledText>
+        <Image className="m-14" source={require('../assets/logo.svg')}></Image>
         <StyledView className="w-full max-w-sm">
-        <StyledText className="mb-2 mt-4">Email</StyledText>
-        <StyledInput 
-          placeholder="Input your email here"
-          onChangeText={setEmail}
-          value={email}
-        />
-        <StyledText className="mb-2 mt-4">Password</StyledText>
-        <StyledInput 
-          placeholder="Input your password here"
-          secureTextEntry={true}
-          onChangeText={setPassword}
-          value={password}
-        />
-        <Link
-          href="/home"
-          asChild
-          onPress={handleLogin}
-        >
-          <StyledButton className="mt-6">
-            Login
-          </StyledButton>
-        </Link>
+          <StyledInput 
+            placeholder="Email"
+            onChangeText={setEmail}
+            value={email}
+          />
+          <StyledInput 
+            placeholder="Password"
+            secureTextEntry={true}
+            onChangeText={setPassword}
+            value={password}
+          />
+          <Link
+            href="/home"
+            asChild
+            onPress={handleLogin}
+          >
+            <StyledButton className="mt-6">
+              Login
+            </StyledButton>
+          </Link>
+          <StyledText className="self-center m-3">Already have an account? <Link href="/signup" className="font-bold">Sign Up</Link></StyledText>
         </StyledView>
     </StyledView>
   )

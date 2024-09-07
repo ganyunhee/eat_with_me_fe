@@ -1,4 +1,6 @@
-import { Stack, Link } from 'expo-router';
+import React, { useEffect } from 'react';
+
+import { Link, useRouter } from 'expo-router';
 
 import { Button } from '~/components/Button';
 import { Container } from '~/components/Container';
@@ -14,15 +16,22 @@ import { StyledView, StyledText, StyledInput, StyledButton } from '../components
 import dummy_data from "../dummyData.json"
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.push('/login');
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [router]);
 
   return (
     <StyledView className="bg-white flex-1 items-center justify-center pb-4">
       <Image source={require('../assets/logo.svg')}></Image>
       <Link href="/login" className="m-4">
-        <StyledText className="">Go to Login</StyledText>
+        <StyledText className="">Loading . . .</StyledText>
       </Link>
     </StyledView>
   );
 }
-
-

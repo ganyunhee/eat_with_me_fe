@@ -28,12 +28,12 @@ export default function Card({ name, address, rating, date, attendees }: DummyDa
 }
 
 const styles = {
-  card: "p-2 flex flex-col gap-1 justify-middle align-center m-auto max-w-[300px]",
+  card: "p-2 flex flex-col gap-1 text-center justify-middle align-center m-auto max-w-[300px]",
   cardTopLine: "flex flex-row justify-between",
   image: "rounded-lg object-contain",
   address: "text-ellipsis font-bold",
   rating: "font-bold",
   date: "text-gray-500",
   members: "mb-2",
-  joinButton: "rounded-lg",
+  joinButton: "rounded-md h-10",
 }
