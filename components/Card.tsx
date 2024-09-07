@@ -13,7 +13,7 @@ export default function Card() {
 
   return (
     <View className={styles.card}>
-      <Image className={styles.image} source={require('assets/restaurant.png')} style={{width: "200px", height: "200px"}} />
+      <Image className={styles.image} source={require('assets/restaurant.png')} style={{width: "31%", height: "31%"}} />
       <View className={styles.cardTopLine}>
         <Text className={styles.address}>{address}</Text>
         <Text className={styles.rating} >{rating}</Text>
