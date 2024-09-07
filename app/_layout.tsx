@@ -5,14 +5,37 @@ import { Stack } from 'expo-router';
 export default function Layout() {
   return (
     <Stack>
-      <Stack.Screen name="home" />
-      <Stack.Screen name="create-event" />
       <Stack.Screen 
         name="index"
         options={{
           headerShown: false
         }}
       />
+      <Stack.Screen 
+        name="home"
+        options={{
+          title: "Home",
+          headerStyle: {
+            backgroundColor: "#FFF"
+          },
+          headerTitleStyle: {
+            fontWeight: "bold"
+          }
+        }}
+      />
+      <Stack.Screen
+        name="login"
+        options={{
+          title: "Sign In",
+          headerStyle: {
+            backgroundColor: "#FFF"
+          },
+          headerTitleStyle: {
+            fontWeight: "bold"
+          }
+        }}
+      />
+      <Stack.Screen name="create-event" />
       <Stack.Screen name="kakao-map" />
     </Stack>
   )

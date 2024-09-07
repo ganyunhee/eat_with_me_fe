@@ -16,7 +16,7 @@ import dummy_data from "../dummyData.json"
 export default function Home() {
 
   return (
-    <StyledView>
+    <StyledView className="bg-white flex-1 items-center justify-center pb-4">
       <Image source={require('../assets/logo.svg')}></Image>
       <Link href="/login" className="m-4">
         <StyledText className="">Go to Login</StyledText>
