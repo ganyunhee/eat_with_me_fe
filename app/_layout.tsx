@@ -8,6 +8,12 @@ export default function Layout() {
       <Stack.Screen name="index" />
       <Stack.Screen name="home" />
       <Stack.Screen name="create-event" />
+      <Stack.Screen 
+        name="index"
+        options={{
+          headerShown: false
+        }}
+      />
       <Stack.Screen name="kakao-map" />
     </Stack>
   )
