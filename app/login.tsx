@@ -2,7 +2,7 @@ import { Link } from 'expo-router';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-import { StyledView, StyledContainer, StyledText, StyledInput, StyledButton } from '../components/StyledComponents';
+import { StyledView, StyledContainer, StyledText, StyledInput, StyledButton, StyledLink } from '../components/StyledComponents';
 
 interface LoginFormProps {
   email: string;
@@ -51,9 +51,9 @@ const login = () => {
         </Link>
           <StyledText className="m-3 self-center">
           Already have an account?{' '}
-          <Link href="/signup" className="font-bold hover:underline hover:decoration-2">
+          <StyledLink href="/signup">
             Sign Up
-          </Link>
+          </StyledLink>
           </StyledText>
           </StyledView>
         </StyledContainer>  
