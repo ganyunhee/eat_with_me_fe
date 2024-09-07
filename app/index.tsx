@@ -6,22 +6,30 @@ import { ScreenContent } from '~/components/ScreenContent';
 import Card from "../components/Card";
 import { View } from "react-native";
 
+// grab dummy data from dummyData.json
+import dummy_data from "../dummyData.json"
+
 export default function Home() {
 
   return (
     <>
-<<<<<<< HEAD
       <Container >
         <View className={styles.library}>
-          {Array(10).fill(0).map((_, i) => <Card key={i} />)}
+          {dummy_data.map((data) => {
+            return (
+              <Card
+                key={data.id}
+                name={data.name}
+                address={data.address}
+                rating={data.rating}
+                date={data.date}
+                attendees={data.attendees}
+              />
+            )
+          })}
         </View>
-=======
-      <Container>
-        <ScreenContent path="app/index.tsx" title="Home" />
         <Link href={{ pathname: '/kakao-map', params: { name: 'Dan' }}} asChild>
-          <Button title="Show Details" />
         </Link>
->>>>>>> 7339f4e1fadf037baff83a99d09ee07671846832
       </Container>
     </>
   );

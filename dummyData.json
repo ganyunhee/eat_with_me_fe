@@ -1,0 +1,82 @@
+[
+  {
+      "id": 1,
+      "name": "Restaurant A",
+      "address": "123 Seoul Street, Gangnam-gu, Seoul, South Korea",
+      "rating": 4.5,
+      "date": "2024-09-01",
+      "attendees": 4
+  },
+  {
+      "id": 2,
+      "name": "Restaurant B",
+      "address": "456 Busan Road, Haeundae-gu, Busan, South Korea",
+      "rating": 4.2,
+      "date": "2024-09-02",
+      "attendees": 2
+  },
+  {
+      "id": 3,
+      "name": "Restaurant C",
+      "address": "789 Incheon Avenue, Namdong-gu, Incheon, South Korea",
+      "rating": 4.7,
+      "date": "2024-09-03",
+      "attendees": 6
+  },
+  {
+      "id": 4,
+      "name": "Restaurant D",
+      "address": "101 Gwangju Blvd, Seo-gu, Gwangju, South Korea",
+      "rating": 4.3,
+      "date": "2024-09-04",
+      "attendees": 3
+  },
+  { 
+      "id": 5,
+      "name": "Restaurant E",
+      "address": "202 Daejeon Street, Yuseong-gu, Daejeon, South Korea",
+      "rating": 4.6,
+      "date": "2024-09-05",
+      "attendees": 5
+  },
+  {
+      "id": 6,
+      "name": "Restaurant F",
+      "address": "303 Jeju Road, Jeju City, Jeju, South Korea",
+      "rating": 4.1,
+      "date": "2024-09-06",
+      "attendees": 7
+  },
+  {
+      "id": 7,
+      "name": "Restaurant G",
+      "address": "404 Ulsan Street, Nam-gu, Ulsan, South Korea",
+      "rating": 4.8,
+      "date": "2024-09-07",
+      "attendees": 4
+  },
+  {
+      "id": 8,
+      "name": "Restaurant H",
+      "address": "505 Suwon Avenue, Paldal-gu, Suwon, South Korea",
+      "rating": 4.4,
+      "date": "2024-09-08",
+      "attendees": 2
+  },
+  {
+      "id": 9,
+      "name": "Restaurant I",
+      "address": "606 Yongin Road, Giheung-gu, Yongin, South Korea",
+      "rating": 4.0,
+      "date": "2024-09-09",
+      "attendees": 6
+  },
+  {
+      "id": 10,
+      "name": "Restaurant J",
+      "address": "707 Gyeongju Boulevard, Gyeongju, South Korea",
+      "rating": 4.9,
+      "date": "2024-09-10",
+      "attendees": 3
+  }
+]
