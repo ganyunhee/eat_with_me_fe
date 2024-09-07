@@ -28,18 +28,21 @@ export default function Layout() {
           name="home"
           options={{
             title: "Home",
+            headerShown: false
           }}
         />
         <Stack.Screen
           name="login"
           options={{
             title: "Sign In",
+            headerShown: false
           }}
         />
         <Stack.Screen
           name="signup"
           options={{
             title: "Sign Up",
+            headerShown: false
           }}
         />
         <Stack.Screen name="create-event" />
