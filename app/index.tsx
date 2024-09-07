@@ -16,7 +16,9 @@ export default function Home() {
   return (
     <StyledView>
       <Image source={require('../assets/logo.svg')}></Image>
-      <Link href="/login" ><StyledText>Go to Login</StyledText></Link>
+      <Link href="/login" className="m-4">
+        <StyledText className="">Go to Login</StyledText>
+      </Link>
     </StyledView>
   );
 }

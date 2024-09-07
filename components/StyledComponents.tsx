@@ -7,7 +7,7 @@ type StyledProps<T> = T & {
 };
 
 export const StyledView: React.FC<StyledProps<ViewProps>> = ({ children, className = '', ...props }) => (
-  <View className="bg-white flex-1 items-center justify-center pb-4" {...props}>
+  <View className={`${className}`} {...props}>
     {children}
   </View>
 );
