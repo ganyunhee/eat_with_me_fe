@@ -6,6 +6,7 @@ export default function Layout() {
   return (
     <Stack>
       <Stack.Screen name="index" />
+      <Stack.Screen name="Card" />
       <Stack.Screen name="kakao-map" />
       <Stack.Screen name="naver-map" />
     </Stack>
