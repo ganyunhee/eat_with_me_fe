@@ -1,5 +1,7 @@
 import { Stack, Link } from 'expo-router';
 
+import { Button } from '~/components/Button';
+import { Container } from '~/components/Container';
 import { View, Text, ScrollView, Image } from 'react-native';
 //import { Button } from '~/components/Button';
 //import { Container } from '~/components/Container';
@@ -22,3 +24,5 @@ export default function Home() {
     </StyledView>
   );
 }
+
+

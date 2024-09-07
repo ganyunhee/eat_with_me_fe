@@ -15,7 +15,8 @@ export default function Card({ name, address, rating, date, attendees }: DummyDa
 
   return (
     <View className={styles.card}>
-      <Image className={styles.image} source={require('../assets/restaurant.png')} style={{ width: 300, height: 300, borderRadius: 14 }} />
+      <Image className={styles.image} source={require('assets/restaurant.png')} style={{ width: 300, height: 300, borderRadius: 14 }} />
+      <Image className={styles.image} source={require('../assets/restaurant.png')} style={{ width: "300px", height: "300px", borderRadius: "14px" }} />
       <View className={styles.cardTopLine}>
         <Text className={styles.address}>{address}</Text>
         <Text className={styles.rating} >{rating}</Text>

@@ -1,5 +1,4 @@
 import { View, Text, Button, TouchableOpacityProps, TouchableOpacity } from "react-native"
-import { Link } from "expo-router"
 import { forwardRef } from "react";
 
 type NavbarButtonProps = {
