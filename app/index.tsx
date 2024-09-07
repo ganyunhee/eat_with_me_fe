@@ -1,24 +1,20 @@
 import { Stack, Link } from 'expo-router';
 
-import { View, Text, ScrollView } from 'react-native';
-import { Button } from '~/components/Button';
-import { Container } from '~/components/Container';
-import { ScreenContent } from '~/components/ScreenContent';
-import Card from "../components/Card";
+import { View, Text, ScrollView, Image } from 'react-native';
+//import { Button } from '~/components/Button';
+//import { Container } from '~/components/Container';
+//import { ScreenContent } from '~/components/ScreenContent';
+//import Card from "../components/Card";
+
+import { StyledView, StyledText, StyledInput, StyledButton } from '../components/StyledComponents';
 
 export default function Home() {
 
   return (
-    <ScrollView>
-      <Container>
-        <View className={styles.library}>
-          {Array(10).fill(0).map((_, i) => <Card key={i} />)}
-        <Link href={{ pathname: '/kakao-map' }} asChild>
-          <Button title="Show Map" />
-        </Link>
-        </View>
-      </Container>
-    </ScrollView>
+    <StyledView>
+      <Image source={require('../assets/logo.svg')}></Image>
+      <Link href="/login" ><StyledText>Go to Login</StyledText></Link>
+    </StyledView>
   );
 }
 

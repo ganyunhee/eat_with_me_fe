@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text } from "react-native"
-import { Image } from "react-native";
+import { Image } from "expo-image";
 import { Button } from "./Button";
 
 export default function Card() {
@@ -13,7 +13,7 @@ export default function Card() {
 
   return (
     <View className={styles.card}>
-      <Image className={styles.image} source={require('assets/restaurant.png')} style={{width: "31%", height: "31%"}} />
+      <Image className={styles.image} source={require('../assets/restaurant.png')} style={{width: 100, height: 100}} />
       <View className={styles.cardTopLine}>
         <Text className={styles.address}>{address}</Text>
         <Text className={styles.rating} >{rating}</Text>
