@@ -37,8 +37,12 @@
     "react-native-screens": "3.31.1",
     "react-native-web": "~0.19.10",
     "react-native-webview": "^13.12.1",
+<<<<<<< HEAD
     "expo-image": "~1.12.15",
     "expo-asset": "~10.0.10"
+=======
+    "expo-image": "~1.12.15"
+>>>>>>> 69fd7a41762dac61d3f57c486ee8457b4da47bb4
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
