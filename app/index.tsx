@@ -18,29 +18,5 @@ export default function Home() {
       <Image source={require('../assets/logo.svg')}></Image>
       <Link href="/login" ><StyledText>Go to Login</StyledText></Link>
     </StyledView>
-    <>
-      <Container >
-        <View className={styles.library}>
-          {dummy_data.map((data) => {
-            return (
-              <Card
-                key={data.id}
-                name={data.name}
-                address={data.address}
-                rating={data.rating}
-                date={data.date}
-                attendees={data.attendees}
-              />
-            )
-          })}
-        </View>
-        <Link href={{ pathname: '/kakao-map', params: { name: 'Dan' }}} asChild>
-        </Link>
-      </Container>
-    </>
   );
-}
-
-const styles = {
-  library: 'flex flex-row flex-wrap gap-4'
 }
