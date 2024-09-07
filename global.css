@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  
+  /* color for buttons /w hover effect */
+  --brand-color: #5842F4;
+  --brand-color-light: #8180F7;
+
+  /* colors for texts and backgrounds */
+  --black: "#3A3A3A";
+  --white: "FFF";
+
+  /* box shadows */
+  --box-shadow: box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  /* accent colors */
+  --accent-color: #FF4F64;
+  --acent-color-light: #FF7B8B;
+
+}
