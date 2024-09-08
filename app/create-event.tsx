@@ -10,19 +10,21 @@ import { StyledView, StyledText, StyledInput, StyledButton } from '~/components/
 const createEvent = () => {
   const [name, setName] = useState<string>('');
   const [description, setDescription] = useState<string>('');
-  const [attendees, setAttendees] = useState<string>(0);
-  const [location, setLocation] = useState<string>('');
-  const [items] = useState<{ label: string; value: string }[]>([
-    { label: '2', value: '2' },
-    { label: '3', value: '3' },
-    { label: '4', value: '4' },
-    { label: '5', value: '5' },
-    { label: '6', value: '6' },
-    { label: '7', value: '7' },
-    { label: '8', value: '8' },
+  const [maxMembers, setMaxMembers] = useState<number>(0);
+  const [address, setAddress] = useState<string>('');
+  const [items] = useState<{ label: number; value: number }[]>([
+    { label: 2, value: 2 },
+    { label: 3, value: 3 },
+    { label: 4, value: 4 },
+    { label: 5, value: 5 },
+    { label: 6, value: 6 },
+    { label: 7, value: 7 },
+    { label: 8, value: 8 },
+    { label: 9, value: 9 },
+    { label: 10, value: 10 },
   ]);
   const [open, setOpen] = useState<boolean>(false);
-  const [dateTime, setDateTime] = useState("");
+  const [eventTime, setEventTime] = useState("");
   const [chatLink, setChatLink] = useState("www.example.chat");
 
   const handleOpenDropdown = (isOpen: boolean) => {
@@ -37,21 +39,21 @@ const createEvent = () => {
     setDescription(value);
   };
 
-  const handleChangeAttendees = (value: string | null) => {
+  const handleChangeAttendees = (value: number | null) => {
     if (value !== null) {
-      setAttendees(value);
+      setMaxMembers(value);
     }
   };
 
   const handleChangeTime = (value: string | null) => {
     if (value !== null) {
-      setDateTime(value);
+      setEventTime(value);
     }
   }
 
-  const handleChangeLocation = (value: string | null) => {
+  const handleChangeAddress = (value: string | null) => {
     if (value !== null) {
-      setLocation(value);
+      setAddress(value);
     }
   }
 
@@ -64,8 +66,8 @@ const createEvent = () => {
   // debugging with useEffect to see how state updates
   // currently attendees is goofed
   useEffect(() => {
-    console.log(`Event name: ${name} \n Description: ${description} \n Attendees: ${attendees} \n Date: ${dateTime} \n Location: ${location} \n Link: ${chatLink}`);
-  }, [name, description, attendees, location, items, dateTime, Link]);
+    console.log(`Event name: ${name} \n Description: ${description} \n Maximum Attendees: ${maxMembers} \n Date: ${eventTime} \n Address: ${address} \n Link: ${chatLink}`);
+  }, [name, description, maxMembers, address, items, setEventTime, Link]);
 
   return (
     <StyledView className="flex-1 items-center justify-center bg-white pb-4">
@@ -97,7 +99,7 @@ const createEvent = () => {
       <StyledView className="w-full max-w-md">
         <DropDownPicker
           open={open}
-          value={attendees}
+          value={maxMembers}
           items={items}
           setOpen={handleOpenDropdown}
           onChangeValue={handleChangeAttendees}
@@ -109,16 +111,16 @@ const createEvent = () => {
           <StyledInput
             placeholder="Event Time"
             onChangeText={handleChangeTime}
-            value={dateTime}
+            value={eventTime}
           />
       </StyledView>
 
-      {/* input for location of the event */}
+      {/* input for address of the event */}
       <StyledView className="w-full max-w-md">
           <StyledInput
             placeholder="Event Location"
-            onChangeText={handleChangeLocation}
-            value={location}
+            onChangeText={handleChangeAddress}
+            value={address}
           />
       </StyledView>
 
