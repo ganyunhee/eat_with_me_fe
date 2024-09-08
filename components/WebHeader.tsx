@@ -41,13 +41,13 @@ const WebHeader = () => {
           />
         </View>
         
-        <Pressable className="px-4 py-3 mr-2 text-white bg-brand rounded-md">
+        <Pressable className="px-4 py-3 mr-2 text-white bg-brand rounded-md hover:bg-brand-light transition-all duration-300">
           <View className="flex-row items-center">
             <Text className="font-bold text-white">Search</Text>
           </View>
         </Pressable>
         
-        <Pressable className="px-4 py-2 bg-brand rounded-md">
+        <Pressable className="px-4 py-2 bg-brand rounded-md hover:bg-brand-light transition-all duration-300">
           <View className="flex-row items-center">
             <Image source={require('../assets/filter.svg')} width={20} height={20} className="mr-2 text-gray-600" />
             <Text className="font-bold text-white">Filter</Text>
@@ -64,4 +64,4 @@ const WebHeader = () => {
   );
 };
 
-export default WebHeader;1
+export default WebHeader;

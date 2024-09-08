@@ -30,7 +30,7 @@ export const StyledInput: React.FC<StyledProps<TextInputProps>> = ({ className =
 
 export const StyledButton: React.FC<StyledProps<PressableProps>> = ({ children, className = '', ...props }) => (
   <Pressable
-    className={`bg-brand py-3 rounded-md active:bg-brand-light ${className}`}
+    className={`bg-brand py-3 rounded-md active:bg-brand-light hover:bg-brand-light ${className}`}
     android_ripple={{ color: 'bg-blue-600', borderless: false }}
     {...props}
   >
