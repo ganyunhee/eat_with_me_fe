@@ -17,8 +17,9 @@ export default function Card({ name, address, rating, date, attendees }: DummyDa
     <View className={styles.card}>
       <Image className={styles.image} source={require('assets/restaurant.png')} style={{ width: 300, height: 300, borderRadius: 14 }} />
       <View className={styles.cardTopLine}>
+        <Text className={styles.name}>{name}</Text>
         <Text className={styles.address}>{address}</Text>
-        <Text className={styles.rating} >{rating}</Text>
+        <Text className={styles.rating}> Rating: {rating} </Text>
       </View>
       <Text className={styles.date}>Date: {date}</Text>
       <Text className={styles.members}>Attendees: {attendees}</Text>
@@ -28,11 +29,12 @@ export default function Card({ name, address, rating, date, attendees }: DummyDa
 }
 
 const styles = {
-  card: "p-2 flex flex-col gap-1 text-center justify-middle align-center m-auto max-w-[300px]",
-  cardTopLine: "flex flex-row justify-between",
+  card: "p-2 flex flex-col gap-1 text-center justify-middle align-center m-auto max-w-[315px]",
+  cardTopLine: "flex flex-row flex-wrap justify-between",
   image: "rounded-lg object-contain",
-  address: "text-ellipsis font-bold",
-  rating: "font-bold",
+  name: "text-ellipsis text-2xl font-bold mb-1",
+  address: "text-ellipsis font-semibold mb-1",
+  rating: "bg-accent-light font-medium text-white",
   date: "text-gray-500",
   members: "mb-2",
   joinButton: "rounded-md h-10 p-1",

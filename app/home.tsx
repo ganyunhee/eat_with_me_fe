@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 
 import Card from '../components/Card';
+import ToggleSwitch from '~/components/ToggleSwitch';
 
 // grab dummy data from dummyData.json
 import dummy_data from '../dummyData.json';
@@ -9,6 +10,7 @@ import dummy_data from '../dummyData.json';
 const Home = () => {
   return (
     <ScrollView>
+      <ToggleSwitch />
       <View className={styles.container}>
         <View className={styles.library}>
           {dummy_data.map((data) => {

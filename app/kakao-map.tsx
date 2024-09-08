@@ -1,6 +1,7 @@
 import React from 'react';
 import { WebView } from 'react-native-webview';
 import { View, Platform } from 'react-native';
+import ToggleSwitch from '~/components/ToggleSwitch';
 
 const html = `
 <!DOCTYPE html>
@@ -12,7 +13,7 @@ const html = `
 </head>
 <body>
 <!-- 지도를 표시할 div 입니다 -->
-<div id="map" style="width:100%;height:350px;"></div>
+<div id="map" style="width:100%; height:90vh; "></div>
 
 <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=8cca17be8a53180771b9d97e346b2db6"></script>
 <script>
@@ -32,15 +33,19 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 export default function KakaoMap() {
   if (Platform.OS === "web") {
     return (
+      <div style={{ width:'100%', height:'100%' }}>
+      <ToggleSwitch />
       <iframe 
         srcDoc={html}
-        style={{width: '100%', height: '400px', border: 'none'}}
+        style={{width: '100%', height: '100%', border: 'none'}}
         sandbox="allow-scripts"
       />
+      </div>
     );
   } else {
     return (
       <View style={{ flex: 1 }}>
+        <ToggleSwitch />
         <WebView
           source={{ html: html }}
           style={{flex: 1}}
