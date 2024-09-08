@@ -1,20 +1,27 @@
-import React from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { View, ScrollView, StyleSheet } from 'react-native';
 
 import Card from '../components/Card';
 import ToggleSwitch from '~/components/ToggleSwitch';
+import KakaoMap from '~/components/KakaoMap';
 
 // grab dummy data from dummyData.json
 import dummy_data from '../dummyData.json';
 
 const Home = () => {
+  const [activeView, setActiveView] = useState('List View');
+
+  const handleToggle = (view) => {
+    setActiveView(view);
+  };
+
   return (
-    <ScrollView>
-      <ToggleSwitch />
-      <View className={styles.container}>
-        <View className={styles.library}>
-          {dummy_data.map((data) => {
-            return (
+    <View style={styles.container}>
+      <ToggleSwitch activeView={activeView} onToggle={handleToggle} />
+      {activeView === 'List View' ? (
+        <ScrollView>
+          <View style={styles.library}>
+            {dummy_data.map((data) => (
               <Card
                 key={data.id}
                 name={data.name}
@@ -23,17 +30,26 @@ const Home = () => {
                 date={data.date}
                 attendees={data.attendees}
               />
-            );
-          })}
-        </View>
-      </View>
-    </ScrollView>
+            ))}
+          </View>
+        </ScrollView>
+      ) : (
+        <KakaoMap />
+      )}
+    </View>
   );
 };
 
-export default Home;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+  },
+  library: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 16,
+  },
+});
 
-const styles = {
-  container: 'p-[20px] flex flex-column',
-  library: 'flex flex-row flex-wrap gap-4',
-};
+export default Home;

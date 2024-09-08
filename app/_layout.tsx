@@ -2,7 +2,7 @@ import '../global.css';
 import React from 'react';
 import { Stack } from 'expo-router';
 import { View } from 'react-native';
-import WebHeader from '~/components/WebHeader'; // Adjust the import path as needed
+import WebHeader from '~/components/WebHeader';
 
 export default function Layout() {
   return (
@@ -47,12 +47,6 @@ export default function Layout() {
         />
         <Stack.Screen 
           name="create-event"
-          options={{
-            headerShown: false
-          }}
-        />
-        <Stack.Screen 
-          name="kakao-map" 
           options={{
             headerShown: false
           }}

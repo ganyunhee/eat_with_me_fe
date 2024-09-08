@@ -1,7 +1,6 @@
 import React from 'react';
 import { WebView } from 'react-native-webview';
 import { View, Platform } from 'react-native';
-import ToggleSwitch from '~/components/ToggleSwitch';
 
 const html = `
 <!DOCTYPE html>
@@ -34,7 +33,6 @@ export default function KakaoMap() {
   if (Platform.OS === "web") {
     return (
       <div style={{ width:'100%', height:'100%' }}>
-      <ToggleSwitch />
       <iframe 
         srcDoc={html}
         style={{width: '100%', height: '100%', border: 'none'}}
@@ -45,7 +43,6 @@ export default function KakaoMap() {
   } else {
     return (
       <View style={{ flex: 1 }}>
-        <ToggleSwitch />
         <WebView
           source={{ html: html }}
           style={{flex: 1}}
