@@ -10,18 +10,22 @@ import { StyledView, StyledText, StyledInput, StyledButton } from '~/components/
 const createEvent = () => {
   const [name, setName] = useState<string>('');
   const [description, setDescription] = useState<string>('');
-  const [attendees, setAttendees] = useState<string>(0);
-  const [location, setLocation] = useState<string>('');
-  const [items] = useState<{ label: string; value: string }[]>([
-    { label: '2', value: '2' },
-    { label: '3', value: '3' },
-    { label: '4', value: '4' },
-    { label: '5', value: '5' },
-    { label: '6', value: '6' },
-    { label: '7', value: '7' },
-    { label: '8', value: '8' },
+  const [maxMembers, setMaxMembers] = useState<number>(0);
+  const [address, setAddress] = useState<string>('');
+  const [items] = useState<{ label: number; value: number }[]>([
+    { label: 2, value: 2 },
+    { label: 3, value: 3 },
+    { label: 4, value: 4 },
+    { label: 5, value: 5 },
+    { label: 6, value: 6 },
+    { label: 7, value: 7 },
+    { label: 8, value: 8 },
+    { label: 9, value: 9 },
+    { label: 10, value: 10 },
   ]);
   const [open, setOpen] = useState<boolean>(false);
+  const [eventTime, setEventTime] = useState("");
+  const [chatLink, setChatLink] = useState("www.example.chat");
 
   const handleOpenDropdown = (isOpen: boolean) => {
     setOpen(isOpen);
@@ -35,17 +39,35 @@ const createEvent = () => {
     setDescription(value);
   };
 
-  const handleChangeAttendees = (value: string | null) => {
+  const handleChangeAttendees = (value: number | null) => {
     if (value !== null) {
-      setAttendees(value);
+      setMaxMembers(value);
     }
   };
+
+  const handleChangeTime = (value: string | null) => {
+    if (value !== null) {
+      setEventTime(value);
+    }
+  }
+
+  const handleChangeAddress = (value: string | null) => {
+    if (value !== null) {
+      setAddress(value);
+    }
+  }
+
+  const handleChangeLink = (value: string | null) => {
+    if (value !== null) {
+      setChatLink(value);
+    }
+  }
 
   // debugging with useEffect to see how state updates
   // currently attendees is goofed
   useEffect(() => {
-    console.log(`Event name: ${name} \n Description: ${description} \n Attendees: ${attendees}`);
-  }, [name, description, attendees, location, items]);
+    console.log(`Event name: ${name} \n Description: ${description} \n Maximum Attendees: ${maxMembers} \n Date: ${eventTime} \n Address: ${address} \n Link: ${chatLink}`);
+  }, [name, description, maxMembers, address, items, setEventTime, Link]);
 
   return (
     <StyledView className="flex-1 items-center justify-center bg-white pb-4">
@@ -64,8 +86,8 @@ const createEvent = () => {
       <StyledView className="w-full max-w-md">
         <TextInput
           editable
-          multiline
-          className="mb-4 mt-2 rounded-md border-[1px] p-2 italic"
+          multiline={true}
+          className="mb-4 mt-2 rounded-md border-[1px] p-2 placeholder:italic"
           placeholder="Discuss the latest in generative AI technology with a group of..."
           maxLength={80}
           onChangeText={handleChangeDescription}
@@ -77,42 +99,37 @@ const createEvent = () => {
       <StyledView className="w-full max-w-md">
         <DropDownPicker
           open={open}
-          value={attendees}
+          value={maxMembers}
           items={items}
           setOpen={handleOpenDropdown}
           onChangeValue={handleChangeAttendees}
         />
       </StyledView>
 
+      {/* input for time of the event */}
       <StyledView className="w-full max-w-md">
           <StyledInput
             placeholder="Event Time"
-            onChangeText={handleChangeName}
-            value={name}
+            onChangeText={handleChangeTime}
+            value={eventTime}
           />
       </StyledView>
 
+      {/* input for address of the event */}
       <StyledView className="w-full max-w-md">
           <StyledInput
             placeholder="Event Location"
-            onChangeText={handleChangeName}
-            value={name}
+            onChangeText={handleChangeAddress}
+            value={address}
           />
       </StyledView>
 
+      {/* input for a link to a chat room */}
       <StyledView className="w-full max-w-md">
           <StyledInput
             placeholder="Group Chat Link"
-            onChangeText={handleChangeName}
-            value={name}
-          />
-      </StyledView>
-
-      <StyledView className="w-full max-w-md">
-          <StyledInput
-            placeholder="Description"
-            onChangeText={handleChangeName}
-            value={name}
+            onChangeText={handleChangeLink}
+            value={chatLink}
           />
       </StyledView>
     </StyledView>
