@@ -25,6 +25,8 @@ const CreateEvent = () => {
   const [eventTime, setEventTime] = useState<string>('');
   const [chatLink, setChatLink] = useState<string>('');
   const [value, setValue] = useState<number | null>(null);
+  const [category, setCategory] = useState<string | null>("");
+  const [userId, setUserId] = useState("1f89ddcd-3db0-45e8-bb91-dedee164b0f7");
 
   const handleOpenDropdown = (isOpen: boolean) => {
     setOpen(isOpen);
@@ -57,6 +59,12 @@ const CreateEvent = () => {
     }
   };
 
+  const handleChangeCategory = (value: string | null) => {
+    if (value!== null) {
+      setCategory(value);
+    }
+  };
+
   const handleChangeLink = (value: string | null) => {
     if (value !== null) {
       setChatLink(value);
@@ -64,13 +72,50 @@ const CreateEvent = () => {
   };
 
   // debugging with useEffect to see how state updates
-  useEffect(() => {
-    console.log(`Event name: ${name} \n Description: ${description} \n Maximum Attendees: ${maxMembers} \n Date: ${eventTime} \n Address: ${address} \n Link: ${chatLink}`);
-  }, [name, description, maxMembers, eventTime, address, chatLink]);
+  // useEffect(() => {
+  //   console.log(`Event name: ${name} \n Description: ${description} \n Maximum Attendees: ${maxMembers} \n Date: ${eventTime} \n Address: ${address} \n Link: ${chatLink}`);
+  // }, [name, description, maxMembers, eventTime, address, chatLink]);
+
+  // handler for submitting data to API
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch("https://qwer-wfvxm.run.goorm.site/creating-event", {
+        method: 'POST', // Make sure to specify the method
+        headers: {
+          'Content-Type': 'application/json', // Specify content type
+        },
+        body: JSON.stringify({
+          name,
+          description, 
+          max_members: maxMembers, 
+          address, 
+          category, 
+          groupChat: chatLink, 
+          user_id: userId,
+          event_time: eventTime
+        }) 
+      });
+  
+      if (response.ok) { 
+        const data = await response.json(); 
+        alert("Event successfully created!");
+        console.log(data); 
+      } else {
+        alert("Creating event failed! Please try again");
+        console.log('Error:', response.statusText);
+      }
+    } catch (error) {
+      alert("Creating event failed! Please try again");
+      console.log(error);
+    }
+  }
+  
+
 
   return (
     <StyledView className="flex-1 items-center justify-center bg-white pb-4 ">
-      <StyledText className="mb-4 text-3xl font-bold">Create an Event</StyledText>
+      <StyledText className="mb-2 text-3xl font-bold">Make Your Event</StyledText>
+      <StyledText className="mb-4 font-bold">Talk arts & crafts, sports, the latest in AI...</StyledText>
 
       {/* name for your event */}
       <StyledView className="w-full max-w-md">
@@ -118,6 +163,16 @@ const CreateEvent = () => {
         />
       </StyledView>
 
+      {/* input for address of the event */}
+      <StyledView className="w-full max-w-md">
+        <StyledInput
+          placeholder="Type of Food"
+          onChangeText={handleChangeCategory}
+          value={category}
+          placeholderTextColor="#777"
+        />
+      </StyledView>
+
       {/* input for a link to a chat room */}
       <StyledView className="w-full max-w-md">
         <StyledInput
@@ -141,6 +196,9 @@ const CreateEvent = () => {
           
         />
       </StyledView>
+
+      <StyledButton className="mt-6 w-[20%]" onPress={handleSubmit}>Create Event</StyledButton>
+
     </StyledView>
   );
 };
