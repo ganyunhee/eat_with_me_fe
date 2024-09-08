@@ -23,7 +23,7 @@ const CreateEvent = () => {
   ]);
   const [open, setOpen] = useState<boolean>(false);
   const [eventTime, setEventTime] = useState<string>('');
-  const [chatLink, setChatLink] = useState<string>('www.example.chat');
+  const [chatLink, setChatLink] = useState<string>('');
   const [value, setValue] = useState<number | null>(null);
 
   const handleOpenDropdown = (isOpen: boolean) => {
@@ -69,15 +69,17 @@ const CreateEvent = () => {
   }, [name, description, maxMembers, eventTime, address, chatLink]);
 
   return (
-    <StyledView className="flex-1 items-center justify-center bg-white pb-4">
+    <StyledView className="flex-1 items-center justify-center bg-white pb-4 ">
       <StyledText className="mb-4 text-3xl font-bold">Create an Event</StyledText>
 
       {/* name for your event */}
       <StyledView className="w-full max-w-md">
         <StyledInput
+          className="border-black border-[1px] rounded-md"
           placeholder="Talk Tech in Gangnam"
           onChangeText={handleChangeName}
           value={name}
+          placeholderTextColor="#777"
         />
       </StyledView>
 
@@ -86,11 +88,13 @@ const CreateEvent = () => {
         <TextInput
           editable
           multiline={true}
-          className="mb-4 mt-2 rounded-md border-[1px] p-2 placeholder:italic"
+          className="my-1 rounded-md border-[1px] p-2"
           placeholder="Discuss the latest in generative AI technology with a group of..."
           maxLength={80}
           onChangeText={handleChangeDescription}
           value={description}
+          style={styles.input}
+          placeholderTextColor="#777"
         />
       </StyledView>
 
@@ -100,6 +104,7 @@ const CreateEvent = () => {
           placeholder="Event Time"
           onChangeText={handleChangeTime}
           value={eventTime}
+          placeholderTextColor="#777"
         />
       </StyledView>
 
@@ -109,6 +114,7 @@ const CreateEvent = () => {
           placeholder="Event Location"
           onChangeText={handleChangeAddress}
           value={address}
+          placeholderTextColor="#777"
         />
       </StyledView>
 
@@ -119,6 +125,7 @@ const CreateEvent = () => {
           placeholder="Group Chat Link"
           onChangeText={handleChangeLink}
           value={chatLink}
+          placeholderTextColor="#777"
         />
       </StyledView>
 
@@ -130,12 +137,19 @@ const CreateEvent = () => {
           items={items}
           setValue={setValue}
           value={value}
-          onChangeValue={handleChangeAttendees} // Correctly use onChangeValue
+          onChangeValue={handleChangeAttendees} 
+          
         />
       </StyledView>
     </StyledView>
   );
 };
+
+const styles = StyleSheet.create({
+  input: {
+    borderColor: "#bbb"
+  }
+})
 
 export default CreateEvent;
   
