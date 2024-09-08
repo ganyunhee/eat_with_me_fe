@@ -26,7 +26,7 @@ const CreateEvent = () => {
   const [chatLink, setChatLink] = useState<string>('');
   const [value, setValue] = useState<number | null>(null);
   const [category, setCategory] = useState<string | null>("");
-  const [userId, setUserId] = useState("1f89ddcd-3db0-45e8-bb91-dedee164b0f7");
+  const [userId, setUserId] = useState("f67ab4ae-54f8-4686-b539-ff9348127eda");
 
   const handleOpenDropdown = (isOpen: boolean) => {
     setOpen(isOpen);
@@ -78,22 +78,27 @@ const CreateEvent = () => {
 
   // handler for submitting data to API
   const handleSubmit = async () => {
+
+    
     try {
-      const response = await fetch("https://qwer-wfvxm.run.goorm.site/creating-event", {
+      const urlEncodedData = new URLSearchParams();
+      urlEncodedData.append("event_name", name);
+      urlEncodedData.append("category", category);
+      urlEncodedData.append("address", address);
+      urlEncodedData.append("user_id", userId);
+      urlEncodedData.append("max_members", maxMembers);
+      urlEncodedData.append("address", address);
+      urlEncodedData.append("groupChat", chatLink);
+      urlEncodedData.append("description", description);
+      urlEncodedData.append("event_time", eventTime);
+      
+      const response = await fetch("https://qwer-wfvxm.run.goorm.site/create-event", {
         method: 'POST', // Make sure to specify the method
         headers: {
-          'Content-Type': 'application/json', // Specify content type
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify({
-          name,
-          description, 
-          max_members: maxMembers, 
-          address, 
-          category, 
-          groupChat: chatLink, 
-          user_id: userId,
-          event_time: eventTime
-        }) 
+        body: urlEncodedData.toString(), // data can be `string` or {object}!
+        credentials: "include",
       });
   
       if (response.ok) { 
@@ -110,8 +115,6 @@ const CreateEvent = () => {
     }
   }
   
-
-
   return (
     <StyledView className="flex-1 items-center justify-center bg-white pb-4 ">
       <StyledText className="mb-2 text-3xl font-bold">Make Your Event</StyledText>
