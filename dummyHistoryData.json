@@ -1,0 +1,42 @@
+[
+  {
+      "date": "2024-09-15",
+      "event_name": "Tech Enthusiasts Dinner",
+      "food_type": "Korean BBQ",
+      "attendees": 8,
+      "max_members": 10,
+      "location": "Seoul, Gangnam-gu, Teheran-ro 123",
+      "chat_link": "https://chat.kakao.com/techenthusiasts_dinner",
+      "status": "finished"
+  },
+  {
+      "date": "2024-09-20",
+      "event_name": "Weekend Hikers Meetup",
+      "food_type": "Vegetarian",
+      "attendees": 5,
+      "max_members": 10,
+      "location": "Busan, Haeundae-gu, Haeundae-ro 456",
+      "chat_link": "https://chat.kakao.com/weekend_hikers",
+      "status": "attending"
+  },
+  {
+      "date": "2024-10-01",
+      "event_name": "Designers' Networking Dinner",
+      "food_type": "Italian",
+      "attendees": 0,
+      "max_members": 10,
+      "location": "Incheon, Bupyeong-gu, Bupyeong-dong 789",
+      "chat_link": "https://chat.kakao.com/designers_networking",
+      "status": "cancelled"
+  },
+  {
+      "date": "2024-10-05",
+      "event_name": "Marketing Strategies Workshop",
+      "food_type": "Fusion",
+      "attendees": 7,
+      "max_members": 10,
+      "location": "Seoul, Jongno-gu, Jongno 2-ga 101",
+      "chat_link": "https://chat.kakao.com/marketing_workshop",
+      "status": "attending"
+  }
+]
