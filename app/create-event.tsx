@@ -86,7 +86,7 @@ const createEvent = () => {
       <StyledView className="w-full max-w-md">
         <TextInput
           editable
-          multiline
+          multiline={true}
           className="mb-4 mt-2 rounded-md border-[1px] p-2 placeholder:italic"
           placeholder="Discuss the latest in generative AI technology with a group of..."
           maxLength={80}
