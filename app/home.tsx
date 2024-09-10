@@ -11,7 +11,7 @@ import dummy_data from '../dummyData.json';
 const Home = () => {
   const [activeView, setActiveView] = useState('List View');
 
-  const handleToggle = (view) => {
+  const handleToggle = (view: React.SetStateAction<string>) => {
     setActiveView(view);
   };
 
