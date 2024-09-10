@@ -1,7 +1,6 @@
 node_modules/
 .expo/
-# Allow dist folder push
-# dist/
+dist/
 npm-debug.*
 *.jks
 *.p8
