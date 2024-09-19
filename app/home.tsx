@@ -17,9 +17,11 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
-      <ToggleSwitch activeView={activeView} onToggle={handleToggle} />
+      <View style={styles.toggleView}>
+        <ToggleSwitch activeView={activeView} onToggle={handleToggle} />
+      </View>
       {activeView === 'List View' ? (
-        <ScrollView>
+        <ScrollView style={styles.scrolledWrapper}>
           <View style={styles.library}>
             {dummy_data.map((data) => (
               <Card
@@ -44,12 +46,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+    marginTop: 20
   },
   library: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 16,
   },
+  scrolledWrapper: {
+    flex: 1,
+    marginTop: 10
+  },
+  toggleView: {
+    padding: 10
+  }
 });
 
 export default Home;

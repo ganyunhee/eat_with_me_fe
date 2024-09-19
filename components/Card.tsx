@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text } from "react-native"
 import { Image } from "expo-image";
 import { Button } from "./Button";
+import { StyledButton } from '../components/StyledComponents';
 
 type DummyDataTypes = {
   name: string,
@@ -23,7 +24,7 @@ export default function Card({ name, address, rating, date, attendees }: DummyDa
       </View>
       <Text className={styles.date}>Date: {date}</Text>
       <Text className={styles.members}>Attendees: {attendees}</Text>
-      <Button className={styles.joinButton} title="Join Event"></Button>
+      <StyledButton>Join Event</StyledButton>
     </View>
   )
 }
@@ -36,6 +37,5 @@ const styles = {
   address: "text-ellipsis font-semibold mb-1",
   rating: "bg-accent-light font-medium text-white",
   date: "text-gray-500",
-  members: "mb-2",
-  joinButton: "rounded-md h-10 p-1",
+  members: "mb-2"
 }
