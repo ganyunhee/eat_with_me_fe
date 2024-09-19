@@ -33,9 +33,9 @@ const styles = {
   card: "p-2 flex flex-col gap-1 text-center justify-middle align-center m-auto max-w-[315px]",
   cardTopLine: "flex flex-row flex-wrap justify-between",
   image: "rounded-lg object-contain",
-  name: "text-ellipsis text-2xl font-bold mb-1",
-  address: "text-ellipsis font-semibold mb-1",
-  rating: "bg-accent-light font-medium text-white",
-  date: "text-gray-500",
-  members: "mb-2"
+  name: "text-ellipsis text-2xl font-bold my-2 ml-1",
+  address: "text-ellipsis font-semibold mb-1 ml-1",
+  rating: "bg-accent-light font-medium text-white ml-1",
+  date: "text-gray-500 ml-1",
+  members: "mb-2 ml-1"
 }
