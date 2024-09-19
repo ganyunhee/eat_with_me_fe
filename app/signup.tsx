@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image, ScrollView, Alert } from 'react-native'
 import React, { useState } from 'react'
-import { StyledView, StyledContainer, StyledText, StyledInput, StyledButton, StyledLink } from '../components/StyledComponents'
+import { StyledView, StyledFormView, StyledContainer, StyledText, StyledInput, StyledButton, StyledLink } from '../components/StyledComponents'
 import { Link } from 'expo-router'
 
 const signup = () => {
@@ -59,10 +59,10 @@ const signup = () => {
     };
 
   return (
-    <ScrollView className="bg-white flex-1 items-center justify-center pb-4">
+    <ScrollView contentContainerStyle={styles.scrolledWrapper}>
         <StyledContainer>
-        <Image className="m-14" source={require('../assets/logo.svg')}></Image>
-        <StyledView className="w-full max-w-sm">
+        <Image className="m-14" source={require('../assets/eatwithme_logo.png')}></Image>
+        <StyledFormView>
             <StyledInput
                 placeholder="Name"
                 value={name}
@@ -105,7 +105,7 @@ const signup = () => {
                 </StyledButton>
             {/*</Link>*/}
             <StyledText className="self-center m-3">Already have an account? <StyledLink href="/login">Sign In</StyledLink></StyledText>
-        </StyledView>
+        </StyledFormView>
         </StyledContainer>
     </ScrollView>
   )
@@ -113,4 +113,13 @@ const signup = () => {
 
 export default signup
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  scrolledWrapper:{
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "white",
+    //paddingBottom: "1rem"
+    paddingBottom: 20
+  }
+})

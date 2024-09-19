@@ -2,7 +2,7 @@ import { Link } from 'expo-router';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Alert } from 'react-native';
 
-import { StyledView, StyledContainer, StyledText, StyledInput, StyledButton, StyledLink } from '../components/StyledComponents';
+import { StyledView, StyledFormView, StyledContainer, StyledText, StyledInput, StyledButton, StyledLink } from '../components/StyledComponents';
 
 interface LoginFormProps {
   username: string;
@@ -63,8 +63,8 @@ const login = () => {
   return (
     <StyledView className="flex-1 items-center justify-center bg-white pb-4">
       <StyledContainer>
-      <Image className="m-14" source={require('../assets/logo.svg')} />
-      <StyledView className="w-full max-w-sm">
+      <Image className="m-14" source={require('../assets/eatwithme_logo.png')} />
+      <StyledFormView>
         <StyledInput
           placeholder="Email"
           onChangeText={handleChange('username')} // Passing the field dynamically
@@ -76,18 +76,19 @@ const login = () => {
           onChangeText={handleChange('password')} // Passing the field dynamically
           value={loginFormValues.password}
         />
-        {/*<Link href="/home" asChild onPress={handleLogin}>*/}
-          <StyledButton className="mt-6 bg-brand transition-all duration-300 hover:bg-brand-light" onPress={handleLogin}>
+        <Link href="/home" asChild /*onPress={handleLogin}*/>
+        {/* Add onPress={handleLogin} later */}
+          <StyledButton className="mt-6 transition-all duration-300" >
             Login
           </StyledButton>
-        {/*</Link>*/}
+        </Link>
           <StyledText className="m-3 self-center">
           Already have an account?{' '}
           <StyledLink href="/signup">
             Sign Up
           </StyledLink>
           </StyledText>
-          </StyledView>
+          </StyledFormView>
         </StyledContainer>  
       </StyledView>
   );
