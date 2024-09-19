@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <StyledView className="flex-1 items-center justify-center bg-white pb-4">
-      <Image source={require('../assets/logo.svg')} />
+      <Image source={require('../assets/eatwithme_logo.png')} />
       <Link href="/login" className="m-4">
         <StyledText className="">Loading . . .</StyledText>
       </Link>
