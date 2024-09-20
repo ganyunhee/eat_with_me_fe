@@ -60,6 +60,8 @@ const styles = StyleSheet.create({
     gap: 16,
   },
   cardWrapper: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     alignSelf: 'auto'
   },
   scrolledWrapper: {
