@@ -1,22 +1,25 @@
 import React from 'react'
 import { View, Text } from "react-native"
 import { Image } from "expo-image";
-import { Button } from "./Button";
 import { StyledButton } from '../components/StyledComponents';
 
 type DummyDataTypes = {
   name: string,
+  restaurant_name: string,
   address: string,
   rating: number,
   date: string,
   attendees: number,
+  image: string,
+  category: string
 }
 
-export default function Card({ name, address, rating, date, attendees }: DummyDataTypes) {
+export default function Card({ name, address, rating, date, attendees, image, category, restaurant_name }: DummyDataTypes) {
+  const imageSource = typeof image === 'string' ? { uri: image } : image;
 
   return (
     <View className={styles.card}>
-      <Image className={styles.image} source={require('assets/restaurant.png')} style={{ width: 300, height: 300, borderRadius: 14 }} />
+      <Image className={styles.image} source={imageSource} style={{ minWidth: 50, minHeight: 50, width: 300, height: 300, borderRadius: 14 }} />
       <View className={styles.cardTopLine}>
         <Text className={styles.name}>{name}</Text>
         <Text className={styles.address}>{address}</Text>

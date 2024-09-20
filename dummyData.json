@@ -1,82 +1,112 @@
 [
   {
       "id": 1,
-      "name": "Restaurant A",
+      "name": "Cheat Day Buffet",
+      "restaurant_name": "Restaurant A",
       "address": "123 Seoul Street, Gangnam-gu, Seoul, South Korea",
       "rating": 4.5,
       "date": "2024-09-01",
-      "attendees": 4
+      "attendees": 4,
+      "image": "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "category": "Buffet"
   },
   {
       "id": 2,
-      "name": "Restaurant B",
+      "name": "Chill Casual Meetup",
+      "restaurant_name": "Restaurant B",
       "address": "456 Busan Road, Haeundae-gu, Busan, South Korea",
       "rating": 4.2,
       "date": "2024-09-02",
-      "attendees": 2
+      "attendees": 2,
+      "image": "../assets/restaurant.png",
+      "category": "Bar"
   },
   {
       "id": 3,
-      "name": "Restaurant C",
+      "name": "Eat and Starve",
+      "restaurant_name": "Restaurant C",
       "address": "789 Incheon Avenue, Namdong-gu, Incheon, South Korea",
       "rating": 4.7,
       "date": "2024-09-03",
-      "attendees": 6
+      "attendees": 6,
+      "image": "https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "category": "Michelin"
   },
   {
       "id": 4,
-      "name": "Restaurant D",
+      "name": "Pasta Tasting",
+      "restaurant_name": "Restaurant D",
       "address": "101 Gwangju Blvd, Seo-gu, Gwangju, South Korea",
       "rating": 4.3,
       "date": "2024-09-04",
-      "attendees": 3
+      "attendees": 3,
+      "image": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "category": "Italian"
   },
   { 
       "id": 5,
-      "name": "Restaurant E",
+      "name": "Meetup with Korean Friends",
+      "restaurant_name": "Restaurant E",
       "address": "202 Daejeon Street, Yuseong-gu, Daejeon, South Korea",
       "rating": 4.6,
       "date": "2024-09-05",
-      "attendees": 5
+      "attendees": 5,
+      "image": "https://images.pexels.com/photos/262897/pexels-photo-262897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "category": "Korean"
   },
   {
       "id": 6,
-      "name": "Restaurant F",
+      "name": "Black Pork Party",
+      "restaurant_name": "Restaurant F",
       "address": "303 Jeju Road, Jeju City, Jeju, South Korea",
       "rating": 4.1,
       "date": "2024-09-06",
-      "attendees": 7
+      "attendees": 7,
+      "image": "https://images.pexels.com/photos/8288072/pexels-photo-8288072.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "category": "K-BBQ"
   },
   {
       "id": 7,
-      "name": "Restaurant G",
+      "name": "UK English Language Exchange",
+      "restaurant_name": "Restaurant G",
       "address": "404 Ulsan Street, Nam-gu, Ulsan, South Korea",
       "rating": 4.8,
       "date": "2024-09-07",
-      "attendees": 4
+      "attendees": 4,
+      "image": "https://images.pexels.com/photos/5836427/pexels-photo-5836427.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "category": "British"
   },
   {
       "id": 8,
-      "name": "Restaurant H",
+      "name": "Cozy Tea Time & Chill",
+      "restaurant_name": "Restaurant H",
       "address": "505 Suwon Avenue, Paldal-gu, Suwon, South Korea",
       "rating": 4.4,
       "date": "2024-09-08",
-      "attendees": 2
+      "attendees": 2,
+      "image": "https://images.pexels.com/photos/17957022/pexels-photo-17957022/free-photo-of-glass-coffee-pots-on-gas-burners.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "category": "Cafe"
   },
   {
       "id": 9,
-      "name": "Restaurant I",
+      "name": "Group Study",
+      "restaurant_name": "Restaurant I",
       "address": "606 Yongin Road, Giheung-gu, Yongin, South Korea",
       "rating": 4.0,
       "date": "2024-09-09",
-      "attendees": 6
+      "attendees": 6,
+      "image": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "category": "Cafe"
   },
   {
       "id": 10,
-      "name": "Restaurant J",
+      "name": "Sushi Ninja",
+      "restaurant_name": "Restaurant J",
       "address": "707 Gyeongju Boulevard, Gyeongju, South Korea",
       "rating": 4.9,
       "date": "2024-09-10",
-      "attendees": 3
+      "attendees": 3,
+      "image": "https://images.pexels.com/photos/2098085/pexels-photo-2098085.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "category": "Sushi"
   }
 ]

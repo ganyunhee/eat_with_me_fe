@@ -24,14 +24,19 @@ const Home = () => {
         <ScrollView style={styles.scrolledWrapper}>
           <View style={styles.library}>
             {dummy_data.map((data) => (
+              <View style={styles.cardWrapper}>
               <Card
                 key={data.id}
                 name={data.name}
+                restaurant_name={data.restaurant_name}
                 address={data.address}
                 rating={data.rating}
                 date={data.date}
                 attendees={data.attendees}
+                image={data.image}
+                category={data.category}
               />
+              </View>
             ))}
           </View>
         </ScrollView>
@@ -51,7 +56,11 @@ const styles = StyleSheet.create({
   library: {
     flexDirection: 'row',
     flexWrap: 'wrap',
+    justifyContent: 'center',
     gap: 16,
+  },
+  cardWrapper: {
+    alignSelf: 'auto'
   },
   scrolledWrapper: {
     flex: 1,
