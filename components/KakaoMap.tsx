@@ -2,6 +2,8 @@ import React from 'react';
 import { WebView } from 'react-native-webview';
 import { View, Platform } from 'react-native';
 
+const kakaoApiUrl = process.env.EXPO_PUBLIC_KAKAO_API_KEY;
+
 const html = `
 <!DOCTYPE html>
 <html>
@@ -12,7 +14,7 @@ const html = `
 <body>
     <div id="map" style="width:100%;height:100vh;"></div>
 
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e66ac44b0a3ae1a499911f4b45bafaaa"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoApiUrl}"></script>
     <script>
     var mapContainer = document.getElementById('map'), 
         mapOption = { 
