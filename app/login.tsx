@@ -51,6 +51,8 @@ const login = () => {
           'Accept': 'application/json',
         },
         body: JSON.stringify(loginData),
+        mode: 'cors',
+        credentials: 'include'
       });
 
       console.log('Response status:', response.status);
@@ -61,8 +63,6 @@ const login = () => {
         const result = await response.json();
         console.log('Login result:', result);
         const access_token = result.token;
-        await AsyncStorage.setItem('access_token', access_token);
-        console.log('Token saved to AsyncStorage');
         // Handle login here
         // TODO. Handle Invalid credentials
         router.replace("/home");
