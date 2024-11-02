@@ -200,7 +200,7 @@ const CreateEvent = () => {
         />
       </StyledView>
 
-      <StyledButton className="mt-6 w-[20%]" onPress={handleSubmit}>Create Event</StyledButton>
+      <StyledButton className="mt-6 max-w-md" onPress={handleSubmit}>Create Event</StyledButton>
 
     </StyledView>
   );
